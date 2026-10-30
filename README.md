@@ -4,9 +4,9 @@
 
 **Public leaderboard: 20th / 312 | Private leaderboard: 33rd / 312**
 
-Моё решение для трека «Ценность пользователей поиска» соревнования [E-CUP Students 2026 от Ozon Tech](https://e-cup-ozon.ru/). Задача — по истории активности пользователя в Поиске и Каталоге предсказать суммарную стоимость его заказов за следующие 30 дней.
+Моё решение для [трека «Ценность пользователей поиска» на ODS](https://ods.ai/competitions/e-cup-2026-search) соревнования [E-CUP Students 2026 от Ozon Tech](https://e-cup-ozon.ru/). Задача — по истории активности пользователя в Поиске и Каталоге предсказать суммарную стоимость его заказов за следующие 30 дней.
 
-Основной ноутбук — **[final_solution.ipynb](final_solution.ipynb)**. В нём собраны обучение бустингов, временная кросс-валидация, анализ ошибок, bagging, hurdle-модели, блендинг и эксперименты с калибровкой итогового прогноза.
+Финальный ноутбук — **[final_solution.ipynb](final_solution.ipynb)**. В нём собраны обучение бустингов, временная кросс-валидация, анализ ошибок, bagging, hurdle-модели, блендинг и эксперименты с калибровкой итогового прогноза.
 
 Отдельно опубликован **[отбор признаков nsel](feature_selection/)**: исходный серверный код, тот же pipeline в одном ноутбуке и результаты 12 сочетаний модели и преобразования таргета.
 
@@ -15,7 +15,7 @@
 В решении используется RMSLE — среднеквадратичная ошибка в логарифмическом пространстве:
 
 $$
-\operatorname{RMSLE}(y,\hat y)=
+\mathrm{RMSLE}(y,\hat{y})=
 \sqrt{\frac{1}{n}\sum_{i=1}^{n}
 \left(\log(1+\hat y_i)-\log(1+y_i)\right)^2}.
 $$
@@ -98,7 +98,7 @@ flowchart TD
 
 ```text
 .
-├── final_solution.ipynb                # полный ноутбук из full-final.ipynb
+├── final_solution.ipynb                # финальный ноутбук решения
 ├── feature_selection/
 │   ├── README.md                      # исходное описание архива nsel
 │   ├── nsel_otbor_priznakov.ipynb      # весь pipeline отбора в одном ноутбуке
@@ -107,13 +107,12 @@ flowchart TD
 │   │   ├── run_nsel.py                 # запуск отбора из командной строки
 │   │   └── tools/build_adaptive_anchor.py
 │   └── results/                       # 12 JSON-отчётов и сводная таблица
-├── docs/notebook_comparison.md         # сравнение двух исходных ноутбуков
 └── requirements.txt
 ```
 
 ## Запуск
 
-### Основной ноутбук
+### Финальный ноутбук
 
 Исходное окружение основного ноутбука — **Kaggle, Python 3.12.13, Linux**. Для повторного запуска нужно подключить:
 
@@ -152,6 +151,5 @@ python run_nsel.py --run-dir runs/catboost_log_level \
 ## Исходные материалы
 
 - [Официальный сайт соревнования](https://e-cup-ozon.ru/).
-- [Основной ноутбук на Kaggle: full-final](https://www.kaggle.com/code/vladimirsmirnovve/full-final).
-- [Предыдущий вариант на Kaggle: blending-trials](https://www.kaggle.com/code/vladimirsmirnovve/blending-trials).
-- [Почему выбран full-final](docs/notebook_comparison.md).
+- [Страница трека «Ценность пользователей поиска» на ODS](https://ods.ai/competitions/e-cup-2026-search).
+- [Финальный ноутбук на Kaggle](https://www.kaggle.com/code/vladimirsmirnovve/full-final).
