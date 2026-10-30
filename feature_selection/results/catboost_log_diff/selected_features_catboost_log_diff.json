@@ -1,0 +1,536 @@
+{
+  "combination": "catboost_log_diff",
+  "fingerprint": "c5a16c2bcfb8fafe",
+  "folds": [
+    {
+      "name": "nov_2025",
+      "train_cutoffs": [
+        "2025-09-16",
+        "2025-10-16"
+      ],
+      "valid_cutoff": "2025-11-15",
+      "weight": 0.25
+    },
+    {
+      "name": "dec_2025",
+      "train_cutoffs": [
+        "2025-09-16",
+        "2025-10-16",
+        "2025-11-15"
+      ],
+      "valid_cutoff": "2025-12-15",
+      "weight": 0.35
+    },
+    {
+      "name": "jan_2026",
+      "train_cutoffs": [
+        "2025-09-16",
+        "2025-10-16",
+        "2025-11-15",
+        "2025-12-15"
+      ],
+      "valid_cutoff": "2026-01-14",
+      "weight": 0.4
+    }
+  ],
+  "probe_learning_rate": 0.15,
+  "feature_pool": 909,
+  "stage1_passed": 348,
+  "stage1_reason": "quantile_or_top_fraction",
+  "forward_selected": [
+    "gmv_share_minus_order_share_365d",
+    "gmv_share_minus_order_share_180d",
+    "gmv_channel_balance_365d",
+    "any_cart_no_order_day_share_active_365d",
+    "search_to_ord_decay30_hl60",
+    "catalog_order_per_catalog_cart_180d",
+    "search_gmv_share_180d",
+    "ph_gmv_median",
+    "ph_gmv_per_item_mean",
+    "both_channel_jaccard_365d",
+    "gmv_maximum_90d",
+    "gmv_share30_of_365",
+    "weekday_5_gmv",
+    "gmv_per_purchase_day_30d",
+    "days_since_last_purchase",
+    "gmv_share30_of_90",
+    "pct_rank_gmv_90d",
+    "search_order_days_365d",
+    "prior_last30",
+    "days_since_last_order",
+    "prior_avg90",
+    "cutoff_month_sin",
+    "purchase_days_share30_of_180",
+    "purchase_days_calendar_rate_365d",
+    "hazard_expected_orders_30d",
+    "gmv_decay30_hl90",
+    "purchase_days_share30_of_90",
+    "search_sum_7d",
+    "cyc_search_progress",
+    "log1p_decay_to_ord_half_life_240d",
+    "search_days_7d__denis",
+    "prior_last30_recency_tau90",
+    "search_order_per_search_cart_30d",
+    "hazard_activity_recency_share",
+    "to_ord_block_rate_0_29",
+    "days_since_last_cart",
+    "gmv_search_share30_of_180",
+    "purchase_days_block_rate_0_29",
+    "searches_block_rate_0_6",
+    "search_to_ord_block_180_364",
+    "decay_acceleration_searches_30d_120d",
+    "recent_monthly_order_acceleration",
+    "ph_gap_cv",
+    "cyc_search_excess",
+    "order_per_search_365d",
+    "ph_gmv_mean",
+    "searches_share30_of_90",
+    "catalog_cart_share_7d",
+    "active_days_decay30_hl90",
+    "user_yoy_current_gmv_ytd",
+    "search_order_per_search_cart_90d",
+    "search_to_ord_block_rate_0_6"
+  ],
+  "seed_feature": "gmv_share_minus_order_share_365d",
+  "pair_rescue": {
+    "selected": [
+      "gmv_share_minus_order_share_365d",
+      "gmv_share_minus_order_share_180d",
+      "gmv_channel_balance_365d",
+      "any_cart_no_order_day_share_active_365d",
+      "search_to_ord_decay30_hl60",
+      "catalog_order_per_catalog_cart_180d",
+      "search_gmv_share_180d",
+      "ph_gmv_median",
+      "ph_gmv_per_item_mean",
+      "both_channel_jaccard_365d",
+      "gmv_maximum_90d",
+      "gmv_share30_of_365",
+      "weekday_5_gmv",
+      "gmv_per_purchase_day_30d",
+      "days_since_last_purchase",
+      "gmv_share30_of_90",
+      "pct_rank_gmv_90d",
+      "search_order_days_365d",
+      "prior_last30",
+      "days_since_last_order",
+      "prior_avg90",
+      "cutoff_month_sin",
+      "purchase_days_share30_of_180",
+      "purchase_days_calendar_rate_365d",
+      "hazard_expected_orders_30d",
+      "gmv_decay30_hl90",
+      "purchase_days_share30_of_90",
+      "search_sum_7d",
+      "cyc_search_progress",
+      "log1p_decay_to_ord_half_life_240d",
+      "search_days_7d__denis",
+      "prior_last30_recency_tau90",
+      "search_order_per_search_cart_30d",
+      "hazard_activity_recency_share",
+      "to_ord_block_rate_0_29",
+      "days_since_last_cart",
+      "gmv_search_share30_of_180",
+      "purchase_days_block_rate_0_29",
+      "searches_block_rate_0_6",
+      "search_to_ord_block_180_364",
+      "decay_acceleration_searches_30d_120d",
+      "recent_monthly_order_acceleration",
+      "ph_gap_cv",
+      "cyc_search_excess",
+      "order_per_search_365d",
+      "ph_gmv_mean",
+      "searches_share30_of_90",
+      "catalog_cart_share_7d",
+      "active_days_decay30_hl90",
+      "user_yoy_current_gmv_ytd",
+      "search_order_per_search_cart_90d",
+      "search_to_ord_block_rate_0_6",
+      "cutoff_days_since_start",
+      "ph_due_ratio_last_gap"
+    ],
+    "baseline": {
+      "weighted": 1.7151679973789307,
+      "per_fold": {
+        "nov_2025": {
+          "rmsle": 1.7351128941214016,
+          "rmsle_zero": 1.6298052274800923,
+          "rmsle_positive": 1.8127376024316326,
+          "trees": 334
+        },
+        "dec_2025": {
+          "rmsle": 1.7420532800857056,
+          "rmsle_zero": 1.7926396627528645,
+          "rmsle_positive": 1.701765170254482,
+          "trees": 398
+        },
+        "jan_2026": {
+          "rmsle": 1.6791778145464589,
+          "rmsle_zero": 1.7159376210649928,
+          "rmsle_positive": 1.6473026221905587,
+          "trees": 572
+        }
+      }
+    },
+    "added": [
+      [
+        "cutoff_days_since_start",
+        "ph_due_ratio_last_gap"
+      ]
+    ],
+    "enabled": true,
+    "candidates": [
+      "cutoff_days_since_start",
+      "cutoff_dayofyear_cos",
+      "ph_due_ratio_last_gap",
+      "percentile_rank_monthly_orders_mean",
+      "order_gap_standard_deviation_days",
+      "active_days_observed_rate_30d"
+    ]
+  },
+  "multiseed": {
+    "features": [
+      "gmv_share_minus_order_share_365d",
+      "gmv_share_minus_order_share_180d",
+      "gmv_channel_balance_365d",
+      "any_cart_no_order_day_share_active_365d",
+      "search_to_ord_decay30_hl60",
+      "catalog_order_per_catalog_cart_180d",
+      "search_gmv_share_180d",
+      "ph_gmv_median",
+      "ph_gmv_per_item_mean",
+      "both_channel_jaccard_365d",
+      "gmv_maximum_90d",
+      "gmv_share30_of_365",
+      "weekday_5_gmv",
+      "gmv_per_purchase_day_30d",
+      "days_since_last_purchase",
+      "gmv_share30_of_90",
+      "pct_rank_gmv_90d",
+      "search_order_days_365d",
+      "prior_last30",
+      "days_since_last_order",
+      "prior_avg90",
+      "cutoff_month_sin",
+      "purchase_days_share30_of_180",
+      "purchase_days_calendar_rate_365d",
+      "hazard_expected_orders_30d",
+      "gmv_decay30_hl90",
+      "purchase_days_share30_of_90",
+      "search_sum_7d",
+      "cyc_search_progress",
+      "log1p_decay_to_ord_half_life_240d",
+      "search_days_7d__denis",
+      "prior_last30_recency_tau90",
+      "search_order_per_search_cart_30d",
+      "hazard_activity_recency_share",
+      "to_ord_block_rate_0_29",
+      "days_since_last_cart",
+      "gmv_search_share30_of_180",
+      "purchase_days_block_rate_0_29",
+      "searches_block_rate_0_6",
+      "search_to_ord_block_180_364",
+      "decay_acceleration_searches_30d_120d",
+      "recent_monthly_order_acceleration",
+      "ph_gap_cv",
+      "cyc_search_excess",
+      "order_per_search_365d",
+      "ph_gmv_mean",
+      "searches_share30_of_90",
+      "catalog_cart_share_7d",
+      "active_days_decay30_hl90",
+      "user_yoy_current_gmv_ytd",
+      "search_order_per_search_cart_90d",
+      "search_to_ord_block_rate_0_6",
+      "cutoff_days_since_start",
+      "ph_due_ratio_last_gap"
+    ],
+    "dropped": [],
+    "per_seed": {
+      "42": {
+        "weighted": 1.7151679973789307,
+        "per_fold": {
+          "nov_2025": {
+            "rmsle": 1.7351128941214016,
+            "rmsle_zero": 1.6298052274800923,
+            "rmsle_positive": 1.8127376024316326,
+            "trees": 334
+          },
+          "dec_2025": {
+            "rmsle": 1.7420532800857056,
+            "rmsle_zero": 1.7926396627528645,
+            "rmsle_positive": 1.701765170254482,
+            "trees": 398
+          },
+          "jan_2026": {
+            "rmsle": 1.6791778145464589,
+            "rmsle_zero": 1.7159376210649928,
+            "rmsle_positive": 1.6473026221905587,
+            "trees": 572
+          }
+        }
+      },
+      "52": {
+        "weighted": 1.7168458672255011,
+        "per_fold": {
+          "nov_2025": {
+            "rmsle": 1.7351311755173153,
+            "rmsle_zero": 1.633264761312491,
+            "rmsle_positive": 1.8103471556600412,
+            "trees": 309
+          },
+          "dec_2025": {
+            "rmsle": 1.742167998939785,
+            "rmsle_zero": 1.7876529175701843,
+            "rmsle_positive": 1.7060387763641802,
+            "trees": 313
+          },
+          "jan_2026": {
+            "rmsle": 1.683260684293119,
+            "rmsle_zero": 1.7424065950858898,
+            "rmsle_positive": 1.631326844071664,
+            "trees": 343
+          }
+        }
+      },
+      "62": {
+        "weighted": 1.71650391846611,
+        "per_fold": {
+          "nov_2025": {
+            "rmsle": 1.73516283433009,
+            "rmsle_zero": 1.6309018219332454,
+            "rmsle_positive": 1.8120559080992018,
+            "trees": 328
+          },
+          "dec_2025": {
+            "rmsle": 1.7421472276703645,
+            "rmsle_zero": 1.7854085630700403,
+            "rmsle_positive": 1.707823837057876,
+            "trees": 303
+          },
+          "jan_2026": {
+            "rmsle": 1.6824042004973998,
+            "rmsle_zero": 1.7378511000839298,
+            "rmsle_positive": 1.6338192197110895,
+            "trees": 312
+          }
+        }
+      }
+    },
+    "stability": {
+      "mean": 1.7161725943568473,
+      "median": 1.71650391846611,
+      "stdev": 0.0008866473676392713,
+      "spread": 0.0016778698465704789,
+      "best_seed": 42,
+      "worst_seed": 52,
+      "best": 1.7151679973789307,
+      "worst": 1.7168458672255011,
+      "set_improvement": 0.4715981341514757
+    },
+    "confirmations": []
+  },
+  "backward_removed": [],
+  "selected_features": [
+    "gmv_share_minus_order_share_365d",
+    "gmv_share_minus_order_share_180d",
+    "gmv_channel_balance_365d",
+    "any_cart_no_order_day_share_active_365d",
+    "search_to_ord_decay30_hl60",
+    "catalog_order_per_catalog_cart_180d",
+    "search_gmv_share_180d",
+    "ph_gmv_median",
+    "ph_gmv_per_item_mean",
+    "both_channel_jaccard_365d",
+    "gmv_maximum_90d",
+    "gmv_share30_of_365",
+    "weekday_5_gmv",
+    "gmv_per_purchase_day_30d",
+    "days_since_last_purchase",
+    "gmv_share30_of_90",
+    "pct_rank_gmv_90d",
+    "search_order_days_365d",
+    "prior_last30",
+    "days_since_last_order",
+    "prior_avg90",
+    "cutoff_month_sin",
+    "purchase_days_share30_of_180",
+    "purchase_days_calendar_rate_365d",
+    "hazard_expected_orders_30d",
+    "gmv_decay30_hl90",
+    "purchase_days_share30_of_90",
+    "search_sum_7d",
+    "cyc_search_progress",
+    "log1p_decay_to_ord_half_life_240d",
+    "search_days_7d__denis",
+    "prior_last30_recency_tau90",
+    "search_order_per_search_cart_30d",
+    "hazard_activity_recency_share",
+    "to_ord_block_rate_0_29",
+    "days_since_last_cart",
+    "gmv_search_share30_of_180",
+    "purchase_days_block_rate_0_29",
+    "searches_block_rate_0_6",
+    "search_to_ord_block_180_364",
+    "decay_acceleration_searches_30d_120d",
+    "recent_monthly_order_acceleration",
+    "ph_gap_cv",
+    "cyc_search_excess",
+    "order_per_search_365d",
+    "ph_gmv_mean",
+    "searches_share30_of_90",
+    "catalog_cart_share_7d",
+    "active_days_decay30_hl90",
+    "user_yoy_current_gmv_ytd",
+    "search_order_per_search_cart_90d",
+    "search_to_ord_block_rate_0_6",
+    "cutoff_days_since_start",
+    "ph_due_ratio_last_gap"
+  ],
+  "final_metric": 1.7151679973789307,
+  "per_fold": {
+    "nov_2025": {
+      "rmsle": 1.7351128941214016,
+      "rmsle_zero": 1.6298052274800923,
+      "rmsle_positive": 1.8127376024316326,
+      "trees": 334
+    },
+    "dec_2025": {
+      "rmsle": 1.7420532800857056,
+      "rmsle_zero": 1.7926396627528645,
+      "rmsle_positive": 1.701765170254482,
+      "trees": 398
+    },
+    "jan_2026": {
+      "rmsle": 1.6791778145464589,
+      "rmsle_zero": 1.7159376210649928,
+      "rmsle_positive": 1.6473026221905587,
+      "trees": 572
+    }
+  },
+  "optuna": {
+    "enabled": false
+  },
+  "config": {
+    "folds": [
+      [
+        "nov_2025",
+        [
+          "2025-09-16",
+          "2025-10-16"
+        ],
+        "2025-11-15",
+        0.25
+      ],
+      [
+        "dec_2025",
+        [
+          "2025-09-16",
+          "2025-10-16",
+          "2025-11-15"
+        ],
+        "2025-12-15",
+        0.35
+      ],
+      [
+        "jan_2026",
+        [
+          "2025-09-16",
+          "2025-10-16",
+          "2025-11-15",
+          "2025-12-15"
+        ],
+        "2026-01-14",
+        0.4
+      ]
+    ],
+    "model_mode": "catboost",
+    "target_mode": "log_diff",
+    "random_state": 42,
+    "users_limit": 0,
+    "feature_limit": 0,
+    "probe": {
+      "learning_rate": 0.15,
+      "depth": 5,
+      "l2_leaf_reg": 3.0,
+      "iterations": 8000,
+      "early_stopping_rounds": 30,
+      "subsample": 0.8,
+      "colsample": 0.8,
+      "min_data_in_leaf": 20
+    },
+    "stage1": {
+      "enabled": true,
+      "actual_runs": 3,
+      "null_runs": 15,
+      "quantile": 0.9,
+      "min_keep": 250,
+      "max_keep": 450,
+      "fallback_top_fraction": 0.15,
+      "null_iterations": 8000,
+      "null_early_stopping": 30,
+      "actual_iterations": 8000,
+      "actual_early_stopping": 30
+    },
+    "stage3": {
+      "top_k_candidates": 0,
+      "rerank_after_n_added": 10,
+      "min_improvement": 5e-05,
+      "min_improved_folds": 2,
+      "stable_min_improvement": 1e-05,
+      "stable_min_improved_folds": 3,
+      "max_allowed_fold_degradation": 0.005,
+      "max_zero_segment_degradation": 0.02,
+      "max_positive_segment_degradation": 0.02,
+      "max_features_to_add": 1000000000,
+      "patience_no_improvement": 1000000000
+    },
+    "stage4": {
+      "enabled": true,
+      "seeds": [
+        42,
+        52,
+        62
+      ],
+      "confirm_doubtful": false,
+      "doubtful_improvement_factor": 2.0,
+      "confirm_stable_tiny_gains": false,
+      "confirmation_min_positive_seeds": 2,
+      "confirmation_min_median_improvement": 0.0,
+      "segment_mode": "diagnostic"
+    },
+    "stage5": {
+      "enabled": true,
+      "top_rejected": 6,
+      "max_pairs": 15,
+      "max_additions": 2,
+      "min_improvement": 7.5e-05,
+      "min_improved_folds": 2,
+      "max_allowed_fold_degradation": 0.005,
+      "near_miss_fraction": 0.2,
+      "prefer_cross_family": true
+    },
+    "backward": {
+      "enabled": true,
+      "neutral_tolerance": 5e-06
+    },
+    "encoding": {
+      "mode": "empirical_bayes",
+      "fixed_smoothing": 20.0,
+      "min_count": 1,
+      "first_block_value": "nan",
+      "unknown_value": "global",
+      "n_blocks": 20,
+      "minimum_variance": 1e-09,
+      "maximum_smoothing": 10000.0
+    }
+  },
+  "checks": [
+    "контракт трёх фолдов",
+    "Group LOFO отсутствует",
+    "одна обратная чистка",
+    "multiseed на наборе",
+    "состояние парного спасения",
+    "набор непустой"
+  ]
+}

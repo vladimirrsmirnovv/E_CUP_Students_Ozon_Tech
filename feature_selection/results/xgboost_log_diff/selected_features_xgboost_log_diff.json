@@ -1,0 +1,523 @@
+{
+  "combination": "xgboost_log_diff",
+  "fingerprint": "a915e55a0445468d",
+  "folds": [
+    {
+      "name": "nov_2025",
+      "train_cutoffs": [
+        "2025-09-16",
+        "2025-10-16"
+      ],
+      "valid_cutoff": "2025-11-15",
+      "weight": 0.25
+    },
+    {
+      "name": "dec_2025",
+      "train_cutoffs": [
+        "2025-09-16",
+        "2025-10-16",
+        "2025-11-15"
+      ],
+      "valid_cutoff": "2025-12-15",
+      "weight": 0.35
+    },
+    {
+      "name": "jan_2026",
+      "train_cutoffs": [
+        "2025-09-16",
+        "2025-10-16",
+        "2025-11-15",
+        "2025-12-15"
+      ],
+      "valid_cutoff": "2026-01-14",
+      "weight": 0.4
+    }
+  ],
+  "probe_learning_rate": 0.15,
+  "feature_pool": 909,
+  "stage1_passed": 270,
+  "stage1_reason": "quantile_or_top_fraction",
+  "forward_selected": [
+    "gmv_channel_balance_365d",
+    "gmv_share_minus_order_share_365d",
+    "both_channel_jaccard_365d",
+    "any_cart_no_order_day_30d",
+    "search_order_share_7d",
+    "searches_standard_deviation_30d",
+    "purchase_days_block_rate_0_6",
+    "cyc_completion_min",
+    "gmv_search_sum_365d",
+    "searches_mean_active_90d",
+    "search_order_share_365d",
+    "gmv_share30_of_365",
+    "gmv_share30_of_90",
+    "to_ord_share30_of_180",
+    "purchase_days_share30_of_180",
+    "purchase_days_decay30_hl90",
+    "search_sum_7d",
+    "purchase_days_block_90_179",
+    "log1p_decay_to_ord_half_life_240d",
+    "gmv_per_order_180d",
+    "cart_days_14d",
+    "search_order_days_180d",
+    "ph_gmv_per_item_mean",
+    "gmv_block_rate_0_29",
+    "cart_days_decay30_hl30",
+    "searches_sum_7d",
+    "cyc_active_progress",
+    "fresh_search_after_old_purchase",
+    "forecast_weekday_profile_gmv_projection",
+    "gmv_maximum_90d",
+    "extra_search_sum_5d",
+    "searches_share30_of_365",
+    "ph_gmv_std",
+    "order_per_search_30d",
+    "days_since_last_search_order",
+    "ph_gap_cv",
+    "fully_zero_days_30d",
+    "percentile_rank_decay_gmv_half_life_30d",
+    "gmv_block_180_364",
+    "search_order_per_search_cart_30d",
+    "percentile_rank_monthly_gmv_mean",
+    "log1p_decay_gmv_half_life_30d",
+    "row_days_180d",
+    "ph_gmv_min",
+    "search_to_cart_block_90_179",
+    "search_to_cart_share30_of_365"
+  ],
+  "seed_feature": "gmv_channel_balance_365d",
+  "pair_rescue": {
+    "selected": [
+      "gmv_channel_balance_365d",
+      "gmv_share_minus_order_share_365d",
+      "both_channel_jaccard_365d",
+      "any_cart_no_order_day_30d",
+      "search_order_share_7d",
+      "searches_standard_deviation_30d",
+      "purchase_days_block_rate_0_6",
+      "cyc_completion_min",
+      "gmv_search_sum_365d",
+      "searches_mean_active_90d",
+      "search_order_share_365d",
+      "gmv_share30_of_365",
+      "gmv_share30_of_90",
+      "to_ord_share30_of_180",
+      "purchase_days_share30_of_180",
+      "purchase_days_decay30_hl90",
+      "search_sum_7d",
+      "purchase_days_block_90_179",
+      "log1p_decay_to_ord_half_life_240d",
+      "gmv_per_order_180d",
+      "cart_days_14d",
+      "search_order_days_180d",
+      "ph_gmv_per_item_mean",
+      "gmv_block_rate_0_29",
+      "cart_days_decay30_hl30",
+      "searches_sum_7d",
+      "cyc_active_progress",
+      "fresh_search_after_old_purchase",
+      "forecast_weekday_profile_gmv_projection",
+      "gmv_maximum_90d",
+      "extra_search_sum_5d",
+      "searches_share30_of_365",
+      "ph_gmv_std",
+      "order_per_search_30d",
+      "days_since_last_search_order",
+      "ph_gap_cv",
+      "fully_zero_days_30d",
+      "percentile_rank_decay_gmv_half_life_30d",
+      "gmv_block_180_364",
+      "search_order_per_search_cart_30d",
+      "percentile_rank_monthly_gmv_mean",
+      "log1p_decay_gmv_half_life_30d",
+      "row_days_180d",
+      "ph_gmv_min",
+      "search_to_cart_block_90_179",
+      "search_to_cart_share30_of_365",
+      "cutoff_is_weekend",
+      "fresh_search_cart_no_order_after_old_purchase",
+      "extra_active_days_10d",
+      "pct_rank_to_ord_decay30_hl60"
+    ],
+    "baseline": {
+      "weighted": 1.718433801384302,
+      "per_fold": {
+        "nov_2025": {
+          "rmsle": 1.7362200129658374,
+          "rmsle_zero": 1.6554496778831926,
+          "rmsle_positive": 1.7964882464764054,
+          "trees": 143
+        },
+        "dec_2025": {
+          "rmsle": 1.743248855768635,
+          "rmsle_zero": 1.773747653477869,
+          "rmsle_positive": 1.71921066514239,
+          "trees": 215
+        },
+        "jan_2026": {
+          "rmsle": 1.6856042465595509,
+          "rmsle_zero": 1.742346046856352,
+          "rmsle_positive": 1.635851253245062,
+          "trees": 328
+        }
+      }
+    },
+    "added": [
+      [
+        "cutoff_is_weekend",
+        "fresh_search_cart_no_order_after_old_purchase"
+      ],
+      [
+        "extra_active_days_10d",
+        "pct_rank_to_ord_decay30_hl60"
+      ]
+    ],
+    "enabled": true,
+    "candidates": [
+      "cutoff_quarter_num",
+      "cutoff_is_weekend",
+      "fresh_search_cart_no_order_after_old_purchase",
+      "extra_active_days_10d",
+      "pct_rank_to_ord_decay30_hl60",
+      "gmv_block_90_179"
+    ]
+  },
+  "multiseed": {
+    "features": [
+      "gmv_channel_balance_365d",
+      "gmv_share_minus_order_share_365d",
+      "both_channel_jaccard_365d",
+      "any_cart_no_order_day_30d",
+      "search_order_share_7d",
+      "searches_standard_deviation_30d",
+      "purchase_days_block_rate_0_6",
+      "cyc_completion_min",
+      "gmv_search_sum_365d",
+      "searches_mean_active_90d",
+      "search_order_share_365d",
+      "gmv_share30_of_365",
+      "gmv_share30_of_90",
+      "to_ord_share30_of_180",
+      "purchase_days_share30_of_180",
+      "purchase_days_decay30_hl90",
+      "search_sum_7d",
+      "purchase_days_block_90_179",
+      "log1p_decay_to_ord_half_life_240d",
+      "gmv_per_order_180d",
+      "cart_days_14d",
+      "search_order_days_180d",
+      "ph_gmv_per_item_mean",
+      "gmv_block_rate_0_29",
+      "cart_days_decay30_hl30",
+      "searches_sum_7d",
+      "cyc_active_progress",
+      "fresh_search_after_old_purchase",
+      "forecast_weekday_profile_gmv_projection",
+      "gmv_maximum_90d",
+      "extra_search_sum_5d",
+      "searches_share30_of_365",
+      "ph_gmv_std",
+      "order_per_search_30d",
+      "days_since_last_search_order",
+      "ph_gap_cv",
+      "fully_zero_days_30d",
+      "percentile_rank_decay_gmv_half_life_30d",
+      "gmv_block_180_364",
+      "search_order_per_search_cart_30d",
+      "percentile_rank_monthly_gmv_mean",
+      "log1p_decay_gmv_half_life_30d",
+      "row_days_180d",
+      "ph_gmv_min",
+      "search_to_cart_block_90_179",
+      "search_to_cart_share30_of_365",
+      "cutoff_is_weekend",
+      "fresh_search_cart_no_order_after_old_purchase",
+      "extra_active_days_10d",
+      "pct_rank_to_ord_decay30_hl60"
+    ],
+    "dropped": [],
+    "per_seed": {
+      "42": {
+        "weighted": 1.718433801384302,
+        "per_fold": {
+          "nov_2025": {
+            "rmsle": 1.7362200129658374,
+            "rmsle_zero": 1.6554496778831926,
+            "rmsle_positive": 1.7964882464764054,
+            "trees": 143
+          },
+          "dec_2025": {
+            "rmsle": 1.743248855768635,
+            "rmsle_zero": 1.773747653477869,
+            "rmsle_positive": 1.71921066514239,
+            "trees": 215
+          },
+          "jan_2026": {
+            "rmsle": 1.6856042465595509,
+            "rmsle_zero": 1.742346046856352,
+            "rmsle_positive": 1.635851253245062,
+            "trees": 328
+          }
+        }
+      },
+      "52": {
+        "weighted": 1.7184270503401748,
+        "per_fold": {
+          "nov_2025": {
+            "rmsle": 1.7365399662939651,
+            "rmsle_zero": 1.6560673664026906,
+            "rmsle_positive": 1.7965953789690963,
+            "trees": 152
+          },
+          "dec_2025": {
+            "rmsle": 1.7436321910106911,
+            "rmsle_zero": 1.7785146011761894,
+            "rmsle_positive": 1.7160768248603988,
+            "trees": 194
+          },
+          "jan_2026": {
+            "rmsle": 1.6850519797823544,
+            "rmsle_zero": 1.7386916824048881,
+            "rmsle_positive": 1.638100711065711,
+            "trees": 365
+          }
+        }
+      },
+      "62": {
+        "weighted": 1.71838589501111,
+        "per_fold": {
+          "nov_2025": {
+            "rmsle": 1.7363342867881129,
+            "rmsle_zero": 1.6564971639041566,
+            "rmsle_positive": 1.7959340150970624,
+            "trees": 154
+          },
+          "dec_2025": {
+            "rmsle": 1.743321388492808,
+            "rmsle_zero": 1.7792494624298842,
+            "rmsle_positive": 1.71492457446594,
+            "trees": 231
+          },
+          "jan_2026": {
+            "rmsle": 1.6853495933539975,
+            "rmsle_zero": 1.7362554138671473,
+            "rmsle_positive": 1.6408600734394427,
+            "trees": 432
+          }
+        }
+      }
+    },
+    "stability": {
+      "mean": 1.7184155822451956,
+      "median": 1.7184270503401748,
+      "stdev": 2.5930542800764142e-05,
+      "spread": 4.790637319196378e-05,
+      "best_seed": 62,
+      "worst_seed": 42,
+      "best": 1.71838589501111,
+      "worst": 1.718433801384302,
+      "set_improvement": 0.4690755283633246
+    },
+    "confirmations": []
+  },
+  "backward_removed": [
+    "search_to_cart_share30_of_365",
+    "log1p_decay_gmv_half_life_30d",
+    "search_order_per_search_cart_30d",
+    "cart_days_decay30_hl30",
+    "gmv_per_order_180d",
+    "gmv_share30_of_90",
+    "gmv_share30_of_365",
+    "search_order_share_365d",
+    "purchase_days_block_rate_0_6",
+    "gmv_share_minus_order_share_365d"
+  ],
+  "selected_features": [
+    "gmv_channel_balance_365d",
+    "both_channel_jaccard_365d",
+    "any_cart_no_order_day_30d",
+    "search_order_share_7d",
+    "searches_standard_deviation_30d",
+    "cyc_completion_min",
+    "gmv_search_sum_365d",
+    "searches_mean_active_90d",
+    "to_ord_share30_of_180",
+    "purchase_days_share30_of_180",
+    "purchase_days_decay30_hl90",
+    "search_sum_7d",
+    "purchase_days_block_90_179",
+    "log1p_decay_to_ord_half_life_240d",
+    "cart_days_14d",
+    "search_order_days_180d",
+    "ph_gmv_per_item_mean",
+    "gmv_block_rate_0_29",
+    "searches_sum_7d",
+    "cyc_active_progress",
+    "fresh_search_after_old_purchase",
+    "forecast_weekday_profile_gmv_projection",
+    "gmv_maximum_90d",
+    "extra_search_sum_5d",
+    "searches_share30_of_365",
+    "ph_gmv_std",
+    "order_per_search_30d",
+    "days_since_last_search_order",
+    "ph_gap_cv",
+    "fully_zero_days_30d",
+    "percentile_rank_decay_gmv_half_life_30d",
+    "gmv_block_180_364",
+    "percentile_rank_monthly_gmv_mean",
+    "row_days_180d",
+    "ph_gmv_min",
+    "search_to_cart_block_90_179",
+    "cutoff_is_weekend",
+    "fresh_search_cart_no_order_after_old_purchase",
+    "extra_active_days_10d",
+    "pct_rank_to_ord_decay30_hl60"
+  ],
+  "final_metric": 1.7168808497415418,
+  "per_fold": {
+    "nov_2025": {
+      "rmsle": 1.7370502893565158,
+      "rmsle_zero": 1.6350065392550015,
+      "rmsle_positive": 1.8123948030833628,
+      "trees": 153
+    },
+    "dec_2025": {
+      "rmsle": 1.7420726990058946,
+      "rmsle_zero": 1.740645252906984,
+      "rmsle_positive": 1.7431795155287693,
+      "trees": 226
+    },
+    "jan_2026": {
+      "rmsle": 1.6822320818758747,
+      "rmsle_zero": 1.722422100863335,
+      "rmsle_positive": 1.6473167759537195,
+      "trees": 383
+    }
+  },
+  "optuna": {
+    "enabled": false
+  },
+  "config": {
+    "folds": [
+      [
+        "nov_2025",
+        [
+          "2025-09-16",
+          "2025-10-16"
+        ],
+        "2025-11-15",
+        0.25
+      ],
+      [
+        "dec_2025",
+        [
+          "2025-09-16",
+          "2025-10-16",
+          "2025-11-15"
+        ],
+        "2025-12-15",
+        0.35
+      ],
+      [
+        "jan_2026",
+        [
+          "2025-09-16",
+          "2025-10-16",
+          "2025-11-15",
+          "2025-12-15"
+        ],
+        "2026-01-14",
+        0.4
+      ]
+    ],
+    "model_mode": "xgboost",
+    "target_mode": "log_diff",
+    "random_state": 42,
+    "users_limit": 0,
+    "feature_limit": 0,
+    "probe": {
+      "learning_rate": 0.15,
+      "depth": 5,
+      "l2_leaf_reg": 3.0,
+      "iterations": 8000,
+      "early_stopping_rounds": 30,
+      "subsample": 0.8,
+      "colsample": 0.8,
+      "min_data_in_leaf": 20
+    },
+    "stage1": {
+      "enabled": true,
+      "actual_runs": 3,
+      "null_runs": 15,
+      "quantile": 0.9,
+      "min_keep": 250,
+      "max_keep": 450,
+      "fallback_top_fraction": 0.15,
+      "null_iterations": 8000,
+      "null_early_stopping": 30,
+      "actual_iterations": 8000,
+      "actual_early_stopping": 30
+    },
+    "stage3": {
+      "top_k_candidates": 0,
+      "rerank_after_n_added": 10,
+      "min_improvement": 5e-05,
+      "min_improved_folds": 2,
+      "stable_min_improvement": 1e-05,
+      "stable_min_improved_folds": 3,
+      "max_allowed_fold_degradation": 0.005,
+      "max_zero_segment_degradation": 0.02,
+      "max_positive_segment_degradation": 0.02,
+      "max_features_to_add": 1000000000,
+      "patience_no_improvement": 1000000000
+    },
+    "stage4": {
+      "enabled": true,
+      "seeds": [
+        42,
+        52,
+        62
+      ],
+      "confirm_doubtful": false,
+      "doubtful_improvement_factor": 2.0,
+      "confirm_stable_tiny_gains": false,
+      "confirmation_min_positive_seeds": 2,
+      "confirmation_min_median_improvement": 0.0,
+      "segment_mode": "diagnostic"
+    },
+    "stage5": {
+      "enabled": true,
+      "top_rejected": 6,
+      "max_pairs": 15,
+      "max_additions": 2,
+      "min_improvement": 7.5e-05,
+      "min_improved_folds": 2,
+      "max_allowed_fold_degradation": 0.005,
+      "near_miss_fraction": 0.2,
+      "prefer_cross_family": true
+    },
+    "backward": {
+      "enabled": true,
+      "neutral_tolerance": 5e-06
+    },
+    "encoding": {
+      "mode": "empirical_bayes",
+      "fixed_smoothing": 20.0,
+      "min_count": 1,
+      "first_block_value": "nan",
+      "unknown_value": "global",
+      "n_blocks": 20,
+      "minimum_variance": 1e-09,
+      "maximum_smoothing": 10000.0
+    }
+  },
+  "checks": [
+    "контракт трёх фолдов",
+    "Group LOFO отсутствует",
+    "одна обратная чистка",
+    "multiseed на наборе",
+    "состояние парного спасения",
+    "набор непустой"
+  ]
+}

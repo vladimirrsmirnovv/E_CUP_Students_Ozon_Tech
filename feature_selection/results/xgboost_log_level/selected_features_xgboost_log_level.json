@@ -1,0 +1,528 @@
+{
+ "combination": "xgboost_log_level",
+ "fingerprint": "aa25bcfb0ba61d35",
+ "folds": [
+  {
+   "name": "nov_2025",
+   "train_cutoffs": [
+    "2025-09-16",
+    "2025-10-16"
+   ],
+   "valid_cutoff": "2025-11-15",
+   "weight": 0.25
+  },
+  {
+   "name": "dec_2025",
+   "train_cutoffs": [
+    "2025-09-16",
+    "2025-10-16",
+    "2025-11-15"
+   ],
+   "valid_cutoff": "2025-12-15",
+   "weight": 0.35
+  },
+  {
+   "name": "jan_2026",
+   "train_cutoffs": [
+    "2025-09-16",
+    "2025-10-16",
+    "2025-11-15",
+    "2025-12-15"
+   ],
+   "valid_cutoff": "2026-01-14",
+   "weight": 0.4
+  }
+ ],
+ "probe_learning_rate": 0.15,
+ "feature_pool": 909,
+ "stage1_passed": 273,
+ "stage1_reason": "quantile_or_top_fraction",
+ "forward_selected": [
+  "gmv_search_sum_365d",
+  "search_only_share_active_90d",
+  "to_ord_block_rate_180_364",
+  "search_to_ord_block_rate_0_6",
+  "gmv_cat_block_rate_0_6",
+  "purchase_days_block_rate_0_6",
+  "gmv_decay30_hl90",
+  "ph_last3_to_median_gmv",
+  "hazard_carted_after_order_days",
+  "searches_share30_of_90",
+  "order_per_search_180d",
+  "purchase_days_decay30_hl90",
+  "log1p_decay_to_ord_half_life_60d",
+  "square_log1p_decay_to_ord_half_life_120d",
+  "square_log1p_decay_to_ord_half_life_240d",
+  "order_calendar_day_probability_365d",
+  "percentile_rank_decay_gmv_half_life_30d",
+  "hazard_overdue_order_zscore",
+  "purchase_days_decay30_hl60",
+  "square_log1p_monthly_orders_mean",
+  "gmv_frequency_interaction_30d",
+  "square_log1p_forecast_weekday_profile_gmv_projection",
+  "percentile_rank_gmv_sum_365d",
+  "percentile_rank_monthly_gmv_mean",
+  "search_days_14d",
+  "btyd_purchase_days",
+  "searches_sum_7d",
+  "ph_purchase_days",
+  "to_cart_sum_14d",
+  "percentile_rank_decay_gmv_half_life_7d",
+  "row_days_7d",
+  "percentile_rank_monthly_orders_mean",
+  "extra_search_sum_5d",
+  "days_since_last_search_cart",
+  "searches_share30_of_365",
+  "days_since_last_search",
+  "to_ord_block_180_364",
+  "bayesian_active_day_purchase_probability_365d",
+  "to_ord_decay30_hl90",
+  "ph_gmv_cv",
+  "ph_gmv_last",
+  "percentile_rank_to_ord_sum_30d",
+  "active_days_share30_of_90",
+  "hol_gmv_log",
+  "cyc_med_pre7c",
+  "gmv_block_rate_0_29",
+  "search_days_block_rate_0_29"
+ ],
+ "seed_feature": "gmv_search_sum_365d",
+ "pair_rescue": {
+  "selected": [
+   "gmv_search_sum_365d",
+   "search_only_share_active_90d",
+   "to_ord_block_rate_180_364",
+   "search_to_ord_block_rate_0_6",
+   "gmv_cat_block_rate_0_6",
+   "purchase_days_block_rate_0_6",
+   "gmv_decay30_hl90",
+   "ph_last3_to_median_gmv",
+   "hazard_carted_after_order_days",
+   "searches_share30_of_90",
+   "order_per_search_180d",
+   "purchase_days_decay30_hl90",
+   "log1p_decay_to_ord_half_life_60d",
+   "square_log1p_decay_to_ord_half_life_120d",
+   "square_log1p_decay_to_ord_half_life_240d",
+   "order_calendar_day_probability_365d",
+   "percentile_rank_decay_gmv_half_life_30d",
+   "hazard_overdue_order_zscore",
+   "purchase_days_decay30_hl60",
+   "square_log1p_monthly_orders_mean",
+   "gmv_frequency_interaction_30d",
+   "square_log1p_forecast_weekday_profile_gmv_projection",
+   "percentile_rank_gmv_sum_365d",
+   "percentile_rank_monthly_gmv_mean",
+   "search_days_14d",
+   "btyd_purchase_days",
+   "searches_sum_7d",
+   "ph_purchase_days",
+   "to_cart_sum_14d",
+   "percentile_rank_decay_gmv_half_life_7d",
+   "row_days_7d",
+   "percentile_rank_monthly_orders_mean",
+   "extra_search_sum_5d",
+   "days_since_last_search_cart",
+   "searches_share30_of_365",
+   "days_since_last_search",
+   "to_ord_block_180_364",
+   "bayesian_active_day_purchase_probability_365d",
+   "to_ord_decay30_hl90",
+   "ph_gmv_cv",
+   "ph_gmv_last",
+   "percentile_rank_to_ord_sum_30d",
+   "active_days_share30_of_90",
+   "hol_gmv_log",
+   "cyc_med_pre7c",
+   "gmv_block_rate_0_29",
+   "search_days_block_rate_0_29",
+   "cutoff_is_weekend",
+   "hol_cart_uplift",
+   "cutoff_is_weekend",
+   "active_days_observed_rate_365d"
+  ],
+  "baseline": {
+   "weighted": 1.7145398953386808,
+   "per_fold": {
+    "nov_2025": {
+     "rmsle": 1.7354802908690248,
+     "rmsle_zero": 1.6154721642982233,
+     "rmsle_positive": 1.8233032664622857,
+     "trees": 119
+    },
+    "dec_2025": {
+     "rmsle": 1.7390543826609959,
+     "rmsle_zero": 1.7248132551258601,
+     "rmsle_positive": 1.7500248884373417,
+     "trees": 155
+    },
+    "jan_2026": {
+     "rmsle": 1.6800019717251902,
+     "rmsle_zero": 1.7190618807979552,
+     "rmsle_positive": 1.6460889522093531,
+     "trees": 228
+    }
+   }
+  },
+  "added": [
+   [
+    "cutoff_is_weekend",
+    "hol_cart_uplift"
+   ],
+   [
+    "cutoff_is_weekend",
+    "active_days_observed_rate_365d"
+   ]
+  ],
+  "enabled": true,
+  "candidates": [
+   "cutoff_is_weekend",
+   "hol_cart_uplift",
+   "hol_search_uplift",
+   "active_days_observed_rate_365d",
+   "hol_buyer"
+  ]
+ },
+ "multiseed": {
+  "features": [
+   "gmv_search_sum_365d",
+   "search_only_share_active_90d",
+   "to_ord_block_rate_180_364",
+   "search_to_ord_block_rate_0_6",
+   "gmv_cat_block_rate_0_6",
+   "purchase_days_block_rate_0_6",
+   "gmv_decay30_hl90",
+   "ph_last3_to_median_gmv",
+   "hazard_carted_after_order_days",
+   "searches_share30_of_90",
+   "order_per_search_180d",
+   "purchase_days_decay30_hl90",
+   "log1p_decay_to_ord_half_life_60d",
+   "square_log1p_decay_to_ord_half_life_120d",
+   "square_log1p_decay_to_ord_half_life_240d",
+   "order_calendar_day_probability_365d",
+   "percentile_rank_decay_gmv_half_life_30d",
+   "hazard_overdue_order_zscore",
+   "purchase_days_decay30_hl60",
+   "square_log1p_monthly_orders_mean",
+   "gmv_frequency_interaction_30d",
+   "square_log1p_forecast_weekday_profile_gmv_projection",
+   "percentile_rank_gmv_sum_365d",
+   "percentile_rank_monthly_gmv_mean",
+   "search_days_14d",
+   "btyd_purchase_days",
+   "searches_sum_7d",
+   "ph_purchase_days",
+   "to_cart_sum_14d",
+   "percentile_rank_decay_gmv_half_life_7d",
+   "row_days_7d",
+   "percentile_rank_monthly_orders_mean",
+   "extra_search_sum_5d",
+   "days_since_last_search_cart",
+   "searches_share30_of_365",
+   "days_since_last_search",
+   "to_ord_block_180_364",
+   "bayesian_active_day_purchase_probability_365d",
+   "to_ord_decay30_hl90",
+   "ph_gmv_cv",
+   "ph_gmv_last",
+   "percentile_rank_to_ord_sum_30d",
+   "active_days_share30_of_90",
+   "hol_gmv_log",
+   "cyc_med_pre7c",
+   "gmv_block_rate_0_29",
+   "search_days_block_rate_0_29",
+   "cutoff_is_weekend",
+   "hol_cart_uplift",
+   "cutoff_is_weekend",
+   "active_days_observed_rate_365d"
+  ],
+  "dropped": [],
+  "per_seed": {
+   "42": {
+    "weighted": 1.7145398953386808,
+    "per_fold": {
+     "nov_2025": {
+      "rmsle": 1.7354802908690248,
+      "rmsle_zero": 1.6154721642982233,
+      "rmsle_positive": 1.8233032664622857,
+      "trees": 119
+     },
+     "dec_2025": {
+      "rmsle": 1.7390543826609959,
+      "rmsle_zero": 1.7248132551258601,
+      "rmsle_positive": 1.7500248884373417,
+      "trees": 155
+     },
+     "jan_2026": {
+      "rmsle": 1.6800019717251902,
+      "rmsle_zero": 1.7190618807979552,
+      "rmsle_positive": 1.6460889522093531,
+      "trees": 228
+     }
+    }
+   },
+   "52": {
+    "weighted": 1.714615313395809,
+    "per_fold": {
+     "nov_2025": {
+      "rmsle": 1.7362825434937919,
+      "rmsle_zero": 1.6106756434962566,
+      "rmsle_positive": 1.827952751865242,
+      "trees": 137
+     },
+     "dec_2025": {
+      "rmsle": 1.7389167010751572,
+      "rmsle_zero": 1.7298968215200623,
+      "rmsle_positive": 1.7458835377130808,
+      "trees": 149
+     },
+     "jan_2026": {
+      "rmsle": 1.6798095803651405,
+      "rmsle_zero": 1.720110192787576,
+      "rmsle_positive": 1.6447948845910243,
+      "trees": 178
+     }
+    }
+   },
+   "62": {
+    "weighted": 1.7146321651828247,
+    "per_fold": {
+     "nov_2025": {
+      "rmsle": 1.7354681644418801,
+      "rmsle_zero": 1.6166665137943028,
+      "rmsle_positive": 1.8224598171257531,
+      "trees": 117
+     },
+     "dec_2025": {
+      "rmsle": 1.739054483878518,
+      "rmsle_zero": 1.7323109288370082,
+      "rmsle_positive": 1.744269158729271,
+      "trees": 122
+     },
+     "jan_2026": {
+      "rmsle": 1.6802401367871833,
+      "rmsle_zero": 1.7219749588623057,
+      "rmsle_positive": 1.6439503465655132,
+      "trees": 220
+     }
+    }
+   }
+  },
+  "stability": {
+   "mean": 1.7145957913057714,
+   "median": 1.714615313395809,
+   "stdev": 4.913517105049039e-05,
+   "spread": 9.22698441438996e-05,
+   "best_seed": 42,
+   "worst_seed": 62,
+   "best": 1.7145398953386808,
+   "worst": 1.7146321651828247,
+   "set_improvement": 0.13302135166851672
+  },
+  "confirmations": []
+ },
+ "backward_removed": [
+  "ph_gmv_last",
+  "percentile_rank_monthly_orders_mean",
+  "btyd_purchase_days",
+  "search_days_14d",
+  "gmv_decay30_hl90"
+ ],
+ "selected_features": [
+  "gmv_search_sum_365d",
+  "search_only_share_active_90d",
+  "to_ord_block_rate_180_364",
+  "search_to_ord_block_rate_0_6",
+  "gmv_cat_block_rate_0_6",
+  "purchase_days_block_rate_0_6",
+  "ph_last3_to_median_gmv",
+  "hazard_carted_after_order_days",
+  "searches_share30_of_90",
+  "order_per_search_180d",
+  "purchase_days_decay30_hl90",
+  "log1p_decay_to_ord_half_life_60d",
+  "square_log1p_decay_to_ord_half_life_120d",
+  "square_log1p_decay_to_ord_half_life_240d",
+  "order_calendar_day_probability_365d",
+  "percentile_rank_decay_gmv_half_life_30d",
+  "hazard_overdue_order_zscore",
+  "purchase_days_decay30_hl60",
+  "square_log1p_monthly_orders_mean",
+  "gmv_frequency_interaction_30d",
+  "square_log1p_forecast_weekday_profile_gmv_projection",
+  "percentile_rank_gmv_sum_365d",
+  "percentile_rank_monthly_gmv_mean",
+  "searches_sum_7d",
+  "ph_purchase_days",
+  "to_cart_sum_14d",
+  "percentile_rank_decay_gmv_half_life_7d",
+  "row_days_7d",
+  "extra_search_sum_5d",
+  "days_since_last_search_cart",
+  "searches_share30_of_365",
+  "days_since_last_search",
+  "to_ord_block_180_364",
+  "bayesian_active_day_purchase_probability_365d",
+  "to_ord_decay30_hl90",
+  "ph_gmv_cv",
+  "percentile_rank_to_ord_sum_30d",
+  "active_days_share30_of_90",
+  "hol_gmv_log",
+  "cyc_med_pre7c",
+  "gmv_block_rate_0_29",
+  "search_days_block_rate_0_29",
+  "cutoff_is_weekend",
+  "hol_cart_uplift",
+  "active_days_observed_rate_365d"
+ ],
+ "final_metric": 1.714366259243228,
+ "per_fold": {
+  "nov_2025": {
+   "rmsle": 1.7354639820746012,
+   "rmsle_zero": 1.6142087705616215,
+   "rmsle_positive": 1.8241451258322203,
+   "trees": 99
+  },
+  "dec_2025": {
+   "rmsle": 1.7392584634875519,
+   "rmsle_zero": 1.7212042215896495,
+   "rmsle_positive": 1.7531394881470597,
+   "trees": 126
+  },
+  "jan_2026": {
+   "rmsle": 1.6793995037598364,
+   "rmsle_zero": 1.7189569186401785,
+   "rmsle_positive": 1.6450446733127873,
+   "trees": 217
+  }
+ },
+ "optuna": {
+  "enabled": false
+ },
+ "config": {
+  "folds": [
+   [
+    "nov_2025",
+    [
+     "2025-09-16",
+     "2025-10-16"
+    ],
+    "2025-11-15",
+    0.25
+   ],
+   [
+    "dec_2025",
+    [
+     "2025-09-16",
+     "2025-10-16",
+     "2025-11-15"
+    ],
+    "2025-12-15",
+    0.35
+   ],
+   [
+    "jan_2026",
+    [
+     "2025-09-16",
+     "2025-10-16",
+     "2025-11-15",
+     "2025-12-15"
+    ],
+    "2026-01-14",
+    0.4
+   ]
+  ],
+  "model_mode": "xgboost",
+  "target_mode": "log_level",
+  "random_state": 42,
+  "users_limit": 0,
+  "feature_limit": 0,
+  "probe": {
+   "learning_rate": 0.15,
+   "depth": 5,
+   "l2_leaf_reg": 3.0,
+   "iterations": 8000,
+   "early_stopping_rounds": 30,
+   "subsample": 0.8,
+   "colsample": 0.8,
+   "min_data_in_leaf": 20
+  },
+  "stage1": {
+   "enabled": true,
+   "actual_runs": 3,
+   "null_runs": 15,
+   "quantile": 0.9,
+   "min_keep": 250,
+   "max_keep": 450,
+   "fallback_top_fraction": 0.15,
+   "null_iterations": 8000,
+   "null_early_stopping": 30,
+   "actual_iterations": 8000,
+   "actual_early_stopping": 30
+  },
+  "stage3": {
+   "top_k_candidates": 0,
+   "rerank_after_n_added": 10,
+   "min_improvement": 5e-05,
+   "min_improved_folds": 2,
+   "stable_min_improvement": 1e-05,
+   "stable_min_improved_folds": 3,
+   "max_allowed_fold_degradation": 0.005,
+   "max_zero_segment_degradation": 0.02,
+   "max_positive_segment_degradation": 0.02,
+   "max_features_to_add": 1000000000,
+   "patience_no_improvement": 1000000000
+  },
+  "stage4": {
+   "enabled": true,
+   "seeds": [
+    42,
+    52,
+    62
+   ],
+   "confirm_doubtful": false,
+   "doubtful_improvement_factor": 2.0,
+   "confirm_stable_tiny_gains": false,
+   "confirmation_min_positive_seeds": 2,
+   "confirmation_min_median_improvement": 0.0,
+   "segment_mode": "diagnostic"
+  },
+  "stage5": {
+   "enabled": true,
+   "top_rejected": 6,
+   "max_pairs": 15,
+   "max_additions": 2,
+   "min_improvement": 7.5e-05,
+   "min_improved_folds": 2,
+   "max_allowed_fold_degradation": 0.005,
+   "near_miss_fraction": 0.2,
+   "prefer_cross_family": true
+  },
+  "backward": {
+   "enabled": true,
+   "neutral_tolerance": 5e-06
+  },
+  "encoding": {
+   "mode": "empirical_bayes",
+   "fixed_smoothing": 20.0,
+   "min_count": 1,
+   "first_block_value": "nan",
+   "unknown_value": "global",
+   "n_blocks": 20,
+   "minimum_variance": 1e-09,
+   "maximum_smoothing": 10000.0
+  }
+ },
+ "checks": [
+  "контракт трёх фолдов",
+  "Group LOFO отсутствует",
+  "одна обратная чистка",
+  "multiseed на наборе",
+  "состояние парного спасения",
+  "набор непустой"
+ ],
+ "duplicates_removed": [
+  "cutoff_is_weekend"
+ ]
+}

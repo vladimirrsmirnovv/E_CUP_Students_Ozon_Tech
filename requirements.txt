@@ -1,0 +1,15 @@
+# Packages used by the modeling notebook and the nsel feature-selection pipeline.
+# The original Kaggle environment was not provided as a version-pinned lockfile.
+numpy
+pandas
+polars
+pyarrow
+psutil
+catboost
+lightgbm
+xgboost
+scipy
+scikit-learn
+optuna
+ipython
+jupyterlab

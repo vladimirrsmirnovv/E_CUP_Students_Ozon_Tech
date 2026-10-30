@@ -1,0 +1,36 @@
+# Python and notebook runtime files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Credentials
+.env
+.env.*
+!.env.example
+
+# Data and generated artifacts
+/data/
+/kaggle/
+/ozon_final/
+/models/
+/submissions/
+*.parquet
+*.npy
+*.npz
+*.cbm
+*.ubj
+*.joblib
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+
+# Feature-selection runtime directories; keep the published results/ reports
+feature_selection/nsel_iz_noutbuka/
+feature_selection/demo_sintetika/
+feature_selection/runs/
+feature_selection/prepared/
+feature_selection/kod/runs/
+feature_selection/kod/prepared/
